@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+  <p>{{ type }}</p>
+  <div class="calRow">
+    <input name="first" type="text" ngModel required />
+    <p>{{ sign }}</p>
+    <input name="second" type="text" ngModel required />
+    <button type="submit" [disabled]="!f.valid">Submit</button>
+    <div *ngIf="result">
+      <span>{{ first }}</span>
+      <span>{{ sign }}</span>
+      <span>{{ second }}</span>
+      <span>=</span>
+      <span>{{ result }}</span>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,37 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+  <div class="flex">
+    <p>First Name</p>
+    <input name="firstname" type="text" ngModel required />
+  </div>
+  <div class="flex">
+    <p>Last Name</p>
+    <input name="lastname" type="text" ngModel required />
+  </div>
+  <div class="flex">
+    <p>Street Address</p>
+    <input name="address" type="text" ngModel required />
+  </div>
+  <button type="submit" [disabled]="!f.valid">Submit</button>
+</form>
+
+<form (ngSubmit)="onSubmitItem()" #itemForm="ngForm">
+  <div class="flex">
+    <button type="submit" [disabled]="!itemForm.valid">Add Item</button>
+    <select id="fruits" name="fruitType" ngModel required>
+      <option value="Apples">Apples</option>
+      <option value="Peaches">Peaches</option>
+      <option value="Pears">Pears</option>
+      <option value="Plums">Plums</option>
+    </select>
+  </div>
+  <div>
+    <p>Qty</p>
+    <input name="qty" type="text" ngModel required />
+  </div>
+</form>
+
+<app-rows
+  [items]="items"
+  (deleteSelected)="onHandleDelete($event)"
+  [person]="person"
+></app-rows>

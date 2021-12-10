@@ -1,0 +1,5 @@
+FORM 
+    - holds amounts
+    - does calculation
+    INVOICE
+        - get data from form 
